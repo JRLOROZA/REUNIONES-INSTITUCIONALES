@@ -84,5 +84,10 @@ create policy "equipo_adjuntos_lee"   on storage.objects for select to authentic
 create policy "equipo_adjuntos_sube"  on storage.objects for insert to authenticated with check (bucket_id = 'adjuntos');
 create policy "equipo_adjuntos_borra" on storage.objects for delete to authenticated using (bucket_id = 'adjuntos');
 
+-- Permisos de la API para usuarios con sesión (los proyectos nuevos no los dan por defecto).
+grant usage on schema public to authenticated;
+grant select, insert, update, delete on public.institutions, public.contacts, public.meetings to authenticated;
+alter default privileges in schema public grant select, insert, update, delete on tables to authenticated;
+
 -- Avisa a la API de que hay tablas nuevas.
 notify pgrst, 'reload schema';
