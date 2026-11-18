@@ -83,3 +83,6 @@ drop policy if exists "equipo_adjuntos_borra" on storage.objects;
 create policy "equipo_adjuntos_lee"   on storage.objects for select to authenticated using (bucket_id = 'adjuntos');
 create policy "equipo_adjuntos_sube"  on storage.objects for insert to authenticated with check (bucket_id = 'adjuntos');
 create policy "equipo_adjuntos_borra" on storage.objects for delete to authenticated using (bucket_id = 'adjuntos');
+
+-- Avisa a la API de que hay tablas nuevas.
+notify pgrst, 'reload schema';
