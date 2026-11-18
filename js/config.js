@@ -4,6 +4,6 @@
 // y las reglas de acceso definidas en supabase/schema.sql.
 // NUNCA pongas aquí la clave "service_role" ni ninguna clave "secret".
 window.APP_CONFIG = {
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: ""
+  SUPABASE_URL: "https://dtxihznjlpzlzmbjhugg.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_AhKw_V9xFGXx6THqbwAPQQ_DEqk8Ms3"
 };
