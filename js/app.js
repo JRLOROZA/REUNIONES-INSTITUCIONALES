@@ -30,7 +30,7 @@ function errMsg(e) {
   const m = e?.message || String(e || "");
   if (/Invalid login credentials/i.test(m)) return "Email o contraseña incorrectos.";
   if (/Failed to fetch|NetworkError|network/i.test(m)) return "No hay conexión. Inténtalo cuando vuelvas a tener internet.";
-  if (/row-level security|permission/i.test(m)) return "No tienes permiso para hacer esto.";
+  if (/row-level security|permission/i.test(m)) return "No tienes permiso para hacer esto (" + m + ").";
   if (/duplicate key/i.test(m)) return "Ya existe un registro con ese nombre.";
   return m || "Error desconocido";
 }

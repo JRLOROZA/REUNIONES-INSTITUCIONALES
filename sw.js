@@ -1,6 +1,6 @@
 // Service worker: guarda la app en el dispositivo para que abra sin conexión.
 // Los datos de las reuniones NO pasan por aquí: la app guarda su propia copia.
-const VERSION = "v1";
+const VERSION = "v2";
 const CACHE = "reuniones-" + VERSION;
 const SHELL = [
   "./",
